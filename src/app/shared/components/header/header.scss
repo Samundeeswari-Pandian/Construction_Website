@@ -1,0 +1,74 @@
+/* Header styles */
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background: var(--white, #fff);
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.brand a {
+  font-weight: 700;
+  color: var(--primary-color, #e65100);
+  text-decoration: none;
+}
+
+/* Normal links */
+.main-nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--text-color, #333);
+  position: relative;
+}
+
+/* Active state ONLY for normal links */
+.main-nav a.active:not(.cta) {
+  color: var(--primary-color, #e65100);
+  font-weight: 600;
+}
+
+/* Underline only for normal links */
+.main-nav a.active:not(.cta)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color, #e65100);
+}
+
+/* CTA button (normal) */
+.main-nav a.cta {
+  background: var(--primary-color, #e65100);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-left: 1.25rem;
+  font-weight: 600;
+}
+
+/* CTA button (active) – stays button */
+.main-nav a.cta.active {
+  background: #cc4700;
+  color: #fff;
+}
+
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+}
+

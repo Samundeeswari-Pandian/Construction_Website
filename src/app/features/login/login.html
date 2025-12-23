@@ -1,0 +1,44 @@
+<div class="login-container">
+
+  <h2>Login</h2>
+
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" novalidate>
+
+    <div class="form-group floating-label">
+      <input id="username" type="text" name="username" [(ngModel)]="username" required />
+      <label for="username">Username</label>
+    </div>
+
+    <div class="form-group floating-label password-field">
+      <input id="password" [type]="showPassword ? 'text' : 'password'" name="password" [(ngModel)]="password"
+        #passwordCtrl="ngModel" required minlength="6" />
+      <label for="password">Password</label>
+      <span class="toggle-password" (click)="togglePassword()">
+        {{ showPassword ? '🙈' : '👁️' }}
+      </span>
+    </div>
+
+    <div class="remember-me">
+      <input type="checkbox" id="rememberMe" name="rememberMe" [(ngModel)]="rememberMe" />
+      <label for="rememberMe">Remember me</label>
+    </div>
+
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+    <button type="submit" class="login-fab" [disabled]="loginForm.invalid || isLoading" title="Login">
+
+      <svg *ngIf="!isLoading" class="login-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 5L3 12L8 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M3 12H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <path d="M12 5C16.419 5 20 8.581 20 13C20 17.419 16.419 21 12 21" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" />
+      </svg>
+
+      <span *ngIf="isLoading" class="spinner"></span>
+    </button>
+
+  </form>
+</div>

@@ -1,0 +1,36 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <a routerLink="/home">Elite Construction Solutions</a>
+    </div>
+
+    <nav class="main-nav">
+      <a routerLink="/home"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+        Home
+      </a>
+
+      <a routerLink="/about"
+         routerLinkActive="active">
+        About
+      </a>
+
+      <a routerLink="/services"
+         routerLinkActive="active">
+        Services
+      </a>
+
+      <a routerLink="/projects"
+         routerLinkActive="active">
+        Projects
+      </a>
+
+      <a routerLink="/contact"
+         routerLinkActive="active"
+         class="cta">
+        Get a Quote
+      </a>
+    </nav>
+  </div>
+</header>

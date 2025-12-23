@@ -1,0 +1,24 @@
+<div class="projects-container">
+
+  <!-- Hero Section -->
+  <section class="projects-hero">
+    <h1>Our Projects</h1>
+    <p>Selected projects that showcase our workmanship and range.</p>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-grid">
+    <div class="project-card" *ngFor="let p of projects">
+      <div class="project-image">
+        <img [src]="p.img" [alt]="p.title" />
+      </div>
+      <div class="project-body">
+        <h3>{{ p.title }}</h3>
+        <p class="location">{{ p.location }}</p>
+        <p class="desc">{{ p.description }}</p>
+        <a [routerLink]="['/projects', p.id]" class="btn">View Details</a>
+      </div>
+    </div>
+  </section>
+
+</div>

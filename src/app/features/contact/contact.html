@@ -1,0 +1,100 @@
+<div class="contact-page">
+	<section class="contact-hero">
+		<h1>Get a Quote</h1>
+		<p>Tell us about your project and we'll provide a free estimate.</p>
+	</section>
+
+	<section class="contact-form">
+		<form #f="ngForm" (ngSubmit)="submitForm(f)">
+
+			<!-- Name -->
+			<div class="form-group">
+				<label>Name *</label>
+				<input type="text" name="name" [(ngModel)]="contact.name" required minlength="3" #name="ngModel" />
+				<small class="error" *ngIf="name.invalid && name.touched">
+					Name is required (min 3 characters)
+				</small>
+			</div>
+
+			<!-- Email -->
+			<div class="form-group">
+				<label>Email *</label>
+				<input type="email" name="email" [(ngModel)]="contact.email" required email #email="ngModel" />
+				<small class="error" *ngIf="email.invalid && email.touched">
+					Enter a valid email
+				</small>
+			</div>
+
+			<!-- Phone -->
+			<div class="form-group">
+				<label>Phone</label>
+				<input type="text" name="phone" [(ngModel)]="contact.phone" pattern="^[0-9]{10}$" #phone="ngModel" />
+				<small class="error" *ngIf="phone.invalid && phone.touched">
+					Enter 10 digit number
+				</small>
+			</div>
+
+			<!-- Country -->
+			<div class="form-group">
+				<label>Country *</label>
+				<select name="country" [(ngModel)]="contact.country" (change)="onCountryChange()" required
+					#country="ngModel">
+					<option value="">Select Country</option>
+					<option *ngFor="let c of countries" [value]="c.code">
+						{{ c.name }}
+					</option>
+				</select>
+				<small class="error" *ngIf="country.invalid && country.touched">
+					Country is required
+				</small>
+			</div>
+
+			<!-- State -->
+			<div class="form-group">
+				<label>State *</label>
+				<select name="state" [(ngModel)]="contact.state" (change)="onStateChange()" required
+					[disabled]="!states.length" #state="ngModel">
+					<option value="">Select State</option>
+					<option *ngFor="let s of states" [value]="s.code">
+						{{ s.name }}
+					</option>
+				</select>
+				<small class="error" *ngIf="state.invalid && state.touched">
+					State is required
+				</small>
+			</div>
+
+			<!-- City -->
+			<div class="form-group">
+				<label>City *</label>
+				<select name="city" [(ngModel)]="contact.city" required [disabled]="!cities.length" #city="ngModel">
+					<option value="">Select City</option>
+					<option *ngFor="let c of cities" [value]="c">
+						{{ c }}
+					</option>
+				</select>
+				<small class="error" *ngIf="city.invalid && city.touched">
+					City is required
+				</small>
+			</div>
+
+			<!-- Message -->
+			<div class="form-group">
+				<label>Project Details *</label>
+				<textarea rows="4" name="message" [(ngModel)]="contact.message" required minlength="10"
+					#message="ngModel"></textarea>
+				<small class="error" *ngIf="message.invalid && message.touched">
+					Minimum 10 characters required
+				</small>
+			</div>
+
+			<!-- Submit -->
+			<div class="form-actions">
+				<button type="submit" [disabled]="f.invalid">
+					Send Message
+				</button>
+			</div>
+
+		</form>
+	</section>
+</div>

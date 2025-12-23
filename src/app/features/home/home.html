@@ -1,0 +1,56 @@
+<div class="home-container">
+
+  <!-- Floating Logout Button -->
+  <!-- <div class="logout-fab" (click)="logout()" title="Logout">
+    <svg class="logout-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+      <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <path d="M12 19C7.581 19 4 15.419 4 11C4 6.581 7.581 3 12 3" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" />
+    </svg>
+  </div> -->
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>{{ companyName }}</h1>
+      <p class="hero-subtitle">Building Excellence, Delivering Trust</p>
+      <div class="cta-buttons">
+        <a routerLink="/contact" class="btn btn-primary">Get a Quote</a>
+        <a routerLink="/projects" class="btn btn-secondary">View Our Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="services-overview">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <a routerLink="/services" class="learn-more">Learn More →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose-us">
+    <h2>Why Choose Us</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <h3>25+ Years Experience</h3>
+        <p>Decades of construction excellence and proven expertise.</p>
+      </div>
+      <div class="feature">
+        <h3>Quality Guaranteed</h3>
+        <p>Superior craftsmanship and premium materials in every project.</p>
+      </div>
+      <div class="feature">
+        <h3>Licensed & Insured</h3>
+        <p>Fully certified team with comprehensive insurance coverage.</p>
+      </div>
+    </div>
+  </section>
+</div>

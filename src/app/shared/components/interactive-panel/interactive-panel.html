@@ -1,0 +1,17 @@
+<div class="interactive-panel">
+
+    <!-- Right side vertical icons -->
+    <div class="scroll-icon-container">
+        <div class="scroll-icon scroll-up" (click)="scrollUp()">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+
+        <div class="scroll-icon scroll-down" (click)="scrollDown()">
+            <i class="fa fa-arrow-down"></i>
+        </div>
+    </div>
+
+    <!-- Slot for page content -->
+    <ng-content></ng-content>
+
+</div>

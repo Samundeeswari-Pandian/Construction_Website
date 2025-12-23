@@ -1,0 +1,29 @@
+[
+  {
+    "name": "India",
+    "code": "IN",
+    "states": [
+      {
+        "name": "Tamil Nadu",
+        "code": "TN",
+        "cities": ["Chennai", "Coimbatore", "Madurai"]
+      },
+      {
+        "name": "Karnataka",
+        "code": "KA",
+        "cities": ["Bangalore", "Mysore"]
+      }
+    ]
+  },
+  {
+    "name": "USA",
+    "code": "US",
+    "states": [
+      {
+        "name": "California",
+        "code": "CA",
+        "cities": ["Los Angeles", "San Diego"]
+      }
+    ]
+  }
+]
